@@ -1,0 +1,129 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLActor</id><coordinates><x>99</x><y>27</y><w>72</w><h>99</h></coordinates><panel_attributes>Scheduler</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>99</x><y>144</y><w>72</w><h>99</h></coordinates><panel_attributes>Manager</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>99</x><y>468</y><w>72</w><h>99</h></coordinates><panel_attributes>Operator</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>81</x><y>333</y><w>108</w><h>108</h></coordinates><panel_attributes>ACME Accounting
+Service</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLActor</id><coordinates><x>108</x><y>630</y><w>54</w><h>99</h></coordinates><panel_attributes>Provider</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>243</x><y>477</y><w>72</w><h>72</h></coordinates><panel_attributes>// Boundary Element
+	  OperatorTerminal
+customelement=
+// Boundary Symbol
+drawCircle(50, 50, 20)
+drawLine(20, 50, 30, 50)
+drawLine(20, 30, 20, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>243</x><y>621</y><w>72</w><h>72</h></coordinates><panel_attributes>// Boundary Element
+	  ProviderTerminal
+customelement=
+// Boundary Symbol
+drawCircle(50, 50, 20)
+drawLine(20, 50, 30, 50)
+drawLine(20, 30, 20, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>243</x><y>135</y><w>72</w><h>72</h></coordinates><panel_attributes>// Boundary Element
+	  ManagerTerminal
+customelement=
+// Boundary Symbol
+drawCircle(50, 50, 20)
+drawLine(20, 50, 30, 50)
+drawLine(20, 30, 20, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>243</x><y>333</y><w>72</w><h>72</h></coordinates><panel_attributes>// Boundary Element
+	  ACMEInterface
+customelement=
+// Boundary Symbol
+drawCircle(50, 50, 20)
+drawLine(20, 50, 30, 50)
+drawLine(20, 30, 20, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>234</x><y>9</y><w>72</w><h>72</h></coordinates><panel_attributes>// Boundary Element
+	  SchedulerInterface
+customelement=
+// Boundary Symbol
+drawCircle(50, 50, 20)
+drawLine(20, 50, 30, 50)
+drawLine(20, 30, 20, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>783</x><y>117</y><w>117</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     ProviderController
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>783</x><y>189</y><w>117</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     MemberController
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>783</x><y>261</y><w>162</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     MainAccountingProcedure
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>954</x><y>504</y><w>117</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     ReportController
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>783</x><y>414</y><w>117</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     ServiceController
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>819</x><y>666</y><w>153</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     ProviderReportController
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1143</x><y>666</y><w>162</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     SummaryReportController
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>981</x><y>666</y><w>153</w><h>72</h></coordinates><panel_attributes>// Control Element
+	     MemberReportController
+customelement=
+// Control Symbol
+drawCircle(50, 50, 20)
+drawLine(44, 31, 54, 21)
+drawLine(44, 31, 54, 41)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1035</x><y>144</y><w>72</w><h>72</h></coordinates><panel_attributes>// Entity Element
+	      Provider
+customelement=
+// Entity Symbol
+drawCircle(50, 50, 20)
+drawLine(30, 70, 70, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1044</x><y>216</y><w>72</w><h>72</h></coordinates><panel_attributes>// Entity Element
+	      Member
+customelement=
+// Entity Symbol
+drawCircle(50, 50, 20)
+drawLine(30, 70, 70, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1044</x><y>279</y><w>117</w><h>72</h></coordinates><panel_attributes>// Entity Element
+	      ProviderDirectory
+customelement=
+// Entity Symbol
+drawCircle(50, 50, 20)
+drawLine(30, 70, 70, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1044</x><y>351</y><w>72</w><h>72</h></coordinates><panel_attributes>// Entity Element
+	      Service
+customelement=
+// Entity Symbol
+drawCircle(50, 50, 20)
+drawLine(30, 70, 70, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1107</x><y>441</y><w>99</w><h>72</h></coordinates><panel_attributes>// Entity Element
+	      ServiceRecord
+customelement=
+// Entity Symbol
+drawCircle(50, 50, 20)
+drawLine(30, 70, 70, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1107</x><y>513</y><w>72</w><h>72</h></coordinates><panel_attributes>// Entity Element
+	      PaymentRecord
+customelement=
+// Entity Symbol
+drawCircle(50, 50, 20)
+drawLine(30, 70, 70, 70)
+	</panel_attributes><additional_attributes></additional_attributes></element></diagram>
