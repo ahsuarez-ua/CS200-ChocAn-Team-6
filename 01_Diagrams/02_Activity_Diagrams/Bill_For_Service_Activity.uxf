@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umletino" version="15.1">
+<zoom_level>10</zoom_level>
+<element><id>Text</id><coordinates><x>20</x><y>10</y><w>220</w><h>30</h></coordinates><panel_attributes>Bill For Service
+fontsize=16</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>390</x><y>30</y><w>20</w><h>20</h></coordinates><panel_attributes>type=initial</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>40</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>85</y><w>220</w><h>50</h></coordinates><panel_attributes>Swipe Member Card or
+Enter Member Number</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>125</y><w>20</w><h>60</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;50.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>175</y><w>220</w><h>50</h></coordinates><panel_attributes>Validate Member Number</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>215</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>380</x><y>260</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Text</id><coordinates><x>425</x><y>240</y><w>60</w><h>20</h></coordinates><panel_attributes>Valid?</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>410</x><y>270</y><w>230</w><h>20</h></coordinates><panel_attributes>lt=-&gt;
+[invalid]</panel_attributes><additional_attributes>10.0;10.0;220.0;10.0</additional_attributes></element>
+<element><id>Relation</id><coordinates><x>190</x><y>270</y><w>200</w><h>20</h></coordinates><panel_attributes>lt=-&gt;
+[suspended]</panel_attributes><additional_attributes>190.0;10.0;10.0;10.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>630</x><y>255</y><w>180</w><h>50</h></coordinates><panel_attributes>Display
+"Invalid Number"</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>20</x><y>255</y><w>180</w><h>50</h></coordinates><panel_attributes>Display
+"Member Suspended"</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>290</y><w>20</w><h>65</h></coordinates><panel_attributes>lt=-&gt;
+[valid]</panel_attributes><additional_attributes>10.0;10.0;10.0;55.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>345</y><w>220</w><h>50</h></coordinates><panel_attributes>Enter Date of Service</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>385</y><w>20</w><h>45</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;35.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>380</x><y>420</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>450</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>495</y><w>220</w><h>50</h></coordinates><panel_attributes>Enter Service Code</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>535</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>380</x><y>580</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Text</id><coordinates><x>425</x><y>560</y><w>120</w><h>20</h></coordinates><panel_attributes>Code Exists?</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>410</x><y>430</y><w>160</w><h>180</h></coordinates><panel_attributes>lt=-&gt;
+[no]</panel_attributes><additional_attributes>10.0;170.0;150.0;170.0;150.0;10.0;10.0;10.0</additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>610</y><w>20</w><h>65</h></coordinates><panel_attributes>lt=-&gt;
+[yes]</panel_attributes><additional_attributes>10.0;10.0;10.0;55.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>665</y><w>220</w><h>50</h></coordinates><panel_attributes>Display Service Name</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>705</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>380</x><y>750</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Text</id><coordinates><x>425</x><y>730</y><w>80</w><h>20</h></coordinates><panel_attributes>Correct?</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>230</x><y>430</y><w>160</w><h>350</h></coordinates><panel_attributes>lt=-&gt;
+[no]</panel_attributes><additional_attributes>150.0;340.0;10.0;340.0;10.0;10.0;150.0;10.0</additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>780</y><w>20</w><h>65</h></coordinates><panel_attributes>lt=-&gt;
+[yes]</panel_attributes><additional_attributes>10.0;10.0;10.0;55.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>380</x><y>835</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Text</id><coordinates><x>425</x><y>815</y><w>130</w><h>20</h></coordinates><panel_attributes>Add Comments?</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>865</y><w>20</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
+[yes]</panel_attributes><additional_attributes>10.0;10.0;10.0;50.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>915</y><w>220</w><h>50</h></coordinates><panel_attributes>Enter Service Comments</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>955</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>Relation</id><coordinates><x>230</x><y>845</y><w>160</w><h>185</h></coordinates><panel_attributes>lt=-&gt;
+[no]</panel_attributes><additional_attributes>150.0;10.0;10.0;10.0;10.0;175.0;150.0;175.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>380</x><y>1000</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>1030</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>1075</y><w>220</w><h>50</h></coordinates><panel_attributes>Write Service Record
+to Disk</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>1115</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>1160</y><w>220</w><h>50</h></coordinates><panel_attributes>Display Fee</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>1200</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLState</id><coordinates><x>290</x><y>1245</y><w>220</w><h>50</h></coordinates><panel_attributes>Record Transaction on
+Verification Form</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>1285</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;45.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>380</x><y>1330</y><w>40</w><h>40</h></coordinates><panel_attributes>type=decision</panel_attributes><additional_attributes></additional_attributes></element>
+<element><id>Relation</id><coordinates><x>410</x><y>295</y><w>320</w><h>1065</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>310.0;10.0;310.0;1055.0;10.0;1055.0</additional_attributes></element>
+<element><id>Relation</id><coordinates><x>100</x><y>295</y><w>290</w><h>1065</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;1055.0;280.0;1055.0</additional_attributes></element>
+<element><id>Relation</id><coordinates><x>390</x><y>1360</y><w>20</w><h>50</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10.0;10.0;10.0;40.0</additional_attributes></element>
+<element><id>UMLSpecialState</id><coordinates><x>390</x><y>1400</y><w>20</w><h>20</h></coordinates><panel_attributes>type=final</panel_attributes><additional_attributes></additional_attributes></element>
+</diagram>
