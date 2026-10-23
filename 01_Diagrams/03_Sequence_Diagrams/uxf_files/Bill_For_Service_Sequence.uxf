@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1540</w>
+      <h>1320</h>
+    </coordinates>
+    <panel_attributes>title=Bill For Service
+obj=Provider~p ACTOR EXECUTION
+obj=:ProviderTerminal~t
+obj=:ServiceController~s
+obj=:ProviderDirectory~d
+obj=:ServiceRecord~r
+
+p-&gt;&gt;&gt;t : 1: billService(memberNumber); on=t
+ref=t s :Validate Member Number
+combinedFragment=alt~alt1 p r
+t:[valid]
+p-&gt;&gt;&gt;t : 2: enterServiceDate(serviceDate)
+p-&gt;&gt;&gt;t : 3: enterServiceCode(serviceCode)
+t-&gt;&gt;&gt;s : 3.1: getServiceName(serviceCode); on=s
+s-&gt;&gt;&gt;d : 3.1.1: findService(serviceCode); on=d
+d.&gt;s : 3.1.2: serviceName; off=d
+s.&gt;t : 3.2: serviceName; off=s
+p-&gt;&gt;&gt;t : 4: confirmService()
+combinedFragment=opt~opt1 p t
+p:[add comments]
+ref=p t :Enter Service Comments
+--=opt1
+t-&gt;&gt;&gt;s : 5: writeServiceRecord(serviceInfo); on=s
+s-&gt;&gt;&gt;r : 5.1: saveRecord(); on=r
+r.&gt;s : 5.2: bool; off=r
+s-&gt;&gt;&gt;d : 5.3: getFee(serviceCode); on=d
+d.&gt;s : 5.4: fee; off=d
+s.&gt;t : 5.5: fee; off=s
+t.&gt;p : 5.6: fee
+..
+t:[invalid or suspended]
+t.&gt;p : 2: error message
+--
+off=t
+destroy=s</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
