@@ -1,0 +1,37 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLSequenceAllInOne</id><coordinates><x>0</x><y>0</y><w>1310</w><h>1360</h></coordinates><panel_attributes>title=Generate Reports
+obj=Manager~m ACTOR EXECUTION
+obj=:ManagerTerminal~t
+obj=:AccountingController~a
+obj=:ReportController~r
+obj=:ServiceLog~l
+
+ref=m t :Verify Manager
+combinedFragment=alt~alt1 m l
+t:[member report]
+m-&gt;&gt;&gt;t : 1: requestMemberReports(); on=t
+t-&gt;&gt;&gt;a : 1.1: produceMemberReports(); on=a
+a-&gt;&gt;&gt;r : 1.1.1: createMemberReport(member, records); on=r
+r-&gt;&gt;&gt;l : 1.1.1.1: getRecordsBetween(start, end); on=l
+l.&gt;r : 1.1.1.2: records; off=l
+r.&gt;a : 1.1.2: memberReport; off=r
+a.&gt;t : 1.2: report file; off=a
+t.&gt;m : 1.3: report file
+..
+t:[provider report]
+m-&gt;&gt;&gt;t : 1: requestProviderReport()
+t-&gt;&gt;&gt;a : 1.1: produceProviderReports(); on=a
+a-&gt;&gt;&gt;r : 1.1.1: createProviderReport(provider, records); on=r
+r.&gt;a : 1.1.2: providerReport; off=r
+a.&gt;t : 1.2: report file; off=a
+t.&gt;m : 1.3: report file
+..
+t:[summary report]
+m-&gt;&gt;&gt;t : 1: requestSummaryReport()
+t-&gt;&gt;&gt;a : 1.1: produceSummaryReport(); on=a
+a-&gt;&gt;&gt;r : 1.1.1: createSummaryReport(records); on=r
+r.&gt;a : 1.1.2: summaryReport; off=r
+a.&gt;t : 1.2: report file; off=a
+t.&gt;m : 1.3: report file
+--
+off=t
+destroy=r</panel_attributes><additional_attributes></additional_attributes></element></diagram>

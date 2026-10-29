@@ -1,0 +1,15 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLSequenceAllInOne</id><coordinates><x>0</x><y>0</y><w>810</w><h>530</h></coordinates><panel_attributes>title=Enter Service Comments
+obj=Provider~p ACTOR EXECUTION
+obj=:ProviderTerminal~t
+
+p-&gt;&gt;&gt;t : 1: promptComments(); on=t
+combinedFragment=alt~alt1 p t
+t:[comments entered]
+t.&gt;p : 1.1: comments
+..
+t:[provider cancels]
+t-&gt;t + : 1.1: displayMessage(msg)
+tick=
+t.&gt;p : 1.2: no comments
+--
+off=t</panel_attributes><additional_attributes></additional_attributes></element></diagram>
