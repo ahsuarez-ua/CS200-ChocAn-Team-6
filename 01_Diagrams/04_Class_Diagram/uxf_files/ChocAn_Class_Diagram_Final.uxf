@@ -140,11 +140,12 @@ loggedIn: boolean
 + updateMember(): void
 + addProvider(): void
 + deleteProvider():
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1122</x><y>144</y><w>174</w><h>54</h></coordinates><panel_attributes>VerificationController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1122</x><y>132</y><w>174</w><h>66</h></coordinates><panel_attributes>VerificationController
 --
-+verifyManager(int: managerNumber): boolean
-+verifyOperator(int: operatorNumber): boolean
-+verifyProvider(int: providerNumber): boolean
++verifyManager(managerNumber: int): boolean
++verifyOperator(operatorNumber: int): boolean
++verifyProvider(providerNumber: int): boolean
++ verifyMember(memberNumber: int): boolean
 - isValidNumber(number: int): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1524</x><y>174</y><w>156</w><h>60</h></coordinates><panel_attributes>Scheduler
 --
 -scheduledTime: String
