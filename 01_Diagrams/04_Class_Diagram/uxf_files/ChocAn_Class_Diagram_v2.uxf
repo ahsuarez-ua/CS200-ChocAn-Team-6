@@ -1,0 +1,223 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>670</x><y>1180</y><w>270</w><h>270</h></coordinates><panel_attributes>Member
+--
+-memberName: String
+-memberID: int
+-streetAddress: String
+-city: String
+-state: String
+-zipCode: String
+-status: MemberStatus {VALID, SUSPENDED}
+--
++getName(): String
++getID(): int
++getAddress(): String
++isSuspended(): Boolean
++suspend():
++reinstate()
++updateInfo(name, address, city, state, zip)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1960</x><y>1190</y><w>260</w><h>190</h></coordinates><panel_attributes>Provider
+--
+-providerName: String
+-providerID: int
+-streetAddress: String
+-city: String
+-state: String
+-zipCode: String
+--
++getName(): String
++getNumber(): int
++getAddress(): String
++updateInfo(name, address, city, state, zip)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1040</x><y>1190</y><w>170</w><h>150</h></coordinates><panel_attributes>Service
+--
+-serviceCode: int
+-serviceName: String
+-serviceDate: String
+-fee: double
+--
++getCode(): int
++getName(): String
++getFee(): double
++getServiceDate(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1600</x><y>1030</y><w>190</w><h>110</h></coordinates><panel_attributes>ProviderDirectory
+--
+-services: List&lt;Service&gt;
+-dateCreated: String
+--
++addService(s: Service),
++sortByName(): void
++writeToFile(fileName:String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1250</x><y>880</y><w>190</w><h>210</h></coordinates><panel_attributes>ServiceRecord
+--
+-currentDateTime: String
+-derviceDate: String
+-providerNumber: int
+-memberNumber: int
+-serviceCode: int
+-comments: String
+--
++getServiceDate(): void
++getDateReceived()
++getProviderNumber(): int
++getMemberNumber(): int
++getServiceCode(): int
++save(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2020</x><y>940</y><w>340</w><h>170</h></coordinates><panel_attributes>/Report/
+--
+-reportType: ReportType {MEMBER, PROVIDER, SUMMARY}
+-reportDate: Date
+-header: string
+-lines: List&lt;ReportLine&gt;
+-totalConsultations: int
+-totalFee: double
+--
++addLine(line:ReportLine),
++computeTotals(): void
++writeToFile(fileName: String): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>140</w><h>200</h></coordinates><panel_attributes>ReportLIne
+--
+-serviceDate: String
+-dateReceived: String
+-memberName: String
+-memberID: int
+-providerName: String
+providerID: int
+-serviceCode: int
+-serviceName: String
+-fee: double
+-consultations: int
+--
++format(): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1800</x><y>810</y><w>190</w><h>130</h></coordinates><panel_attributes>PaymentRecord
+--
+-providerName: String
+-providerNumber: int
+-amount: double
+--
++PaymentRecord(name: String, providerNumber: int, amount: double)
++getProviderName(): String
++getProviderNumber(): int
++getAmount(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1500</x><y>450</y><w>220</w><h>90</h></coordinates><panel_attributes>ProviderController
+--
++addProvider(p: Provider)
++delteProvider(id: int)
++updateProvider(id:int, p: Provider)
++findProvider(id: int): Provider
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>530</y><w>540</w><h>110</h></coordinates><panel_attributes>MemberController
+--
++validateMember(memberNumber: int): ValidationResult
++addMember(name:String, street:String, city: String, state: String, zipCode: String): Member
++deleteMember(id: int)
++updateMember(name:String, street:String, city: String, state: String, zipCode: String): Member
++updateStatus(id: int, status: MemberStatus)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>910</x><y>530</y><w>530</w><h>110</h></coordinates><panel_attributes>ServiceController
+--
++lookUpService(code: int)
++recordService(serviceDate, providerID, memberID, serviceCode, comments): ServiceRecord
++getFee(code: int): double
++generate ProviderDirectory(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2020</x><y>610</y><w>510</w><h>100</h></coordinates><panel_attributes>ReportController
+--
+
+--
++createMemberReport(member: Member, records: List&lt;ServiceRecord&gt;: MemberReport
++createProviderReport(provider:Provider, records: List&lt;ServiceRecord&gt;): ProviderReport
++createSummaryReport(records: List&lt;ServiceRecord&gt;): SummaryReport</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>190</y><w>230</w><h>190</h></coordinates><panel_attributes>ProviderTerminal
+--
+-currentProviderID: int
+loggedIn: boolean
+--
++promptProviderID() : int
++readMemberID(): int
++displayMessage(msg: String): void
++promptServiceDate(): String
++promptServiceCode(): int
++confirmService(name: string): boolean
++promptComments(): String
++displayFee(fee: double): void
++requestProviderDirectory(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1420</x><y>230</y><w>200</w><h>100</h></coordinates><panel_attributes>OperatorTerminal
+--
++showMenu(): void
++promptMemberInfo(): Member
++promptProviderInfo(): Provider
++promptID(): int
++displayResult(msg: String): void
++enterOperatorNumber(int: OperatorID): void
++displayMenu(): void
++displayError(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>410</y><w>290</w><h>90</h></coordinates><panel_attributes>VerificationController
+--
++verifyManager(int: managerNumber): boolean
++verifyOperator(int: operatorNumber): boolean
++verifyProvider(int: providerNumber): boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2190</x><y>220</y><w>140</w><h>90</h></coordinates><panel_attributes>SchedulerUI
+--
+-scheduledTime: String
+--
++onScheduledTime()
++triggerMainAccountingProcedure(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1840</x><y>230</y><w>210</w><h>90</h></coordinates><panel_attributes>ManagerTerminal
+--
++showMenu()
++requestReport(type: ReportType)
++runMainAccountingProcedure()
++displayResult(msg:String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>210</y><w>340</w><h>90</h></coordinates><panel_attributes>ACMEInterface
+--
+-updateTime: String
+--
++receiveStatusUpdates(updates: List)
++applyUpdate(memberNumber: int, status MemberStatus)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1420</x><y>0</y><w>200</w><h>120</h></coordinates><panel_attributes>Menu
+--
+-running: boolean
+--
+menu()
++run(): void
+-showMenu(): void
+-openTerminal(choice: int): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1840</x><y>430</y><w>230</w><h>140</h></coordinates><panel_attributes>AccountingController
+--
+-weekStart: LocalDate
+-weekEnd: LocalDate
+--
++runMainAccountingProcedure(): void
++produceMemberReports(): void
++produceProviderReports(): void
++produceSummaryReport(): void
++producePaymentData(): EFTFile
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1050</x><y>50</y><w>390</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+m1=1
+m2=1
+contains &gt;</panel_attributes><additional_attributes>370;20;70;20;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1510</x><y>110</y><w>90</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+
+contains &gt;</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>1610</x><y>50</y><w>370</w><h>200</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+
+m1=1
+m2=1
+
+contains &gt;</panel_attributes><additional_attributes>10;20;340;20;340;180</additional_attributes></element><element><id>Relation</id><coordinates><x>1900</x><y>310</y><w>170</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+requests reports from &gt;</panel_attributes><additional_attributes>20;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2060</x><y>300</y><w>210</w><h>180</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+triggers &gt;</panel_attributes><additional_attributes>10;150;120;150;190;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2060</x><y>500</y><w>160</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+delegates to &gt;</panel_attributes><additional_attributes>110;110;110;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2150</x><y>700</y><w>100</w><h>260</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..*
+m2=1
+creates &gt;</panel_attributes><additional_attributes>50;240;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1560</x><y>320</y><w>210</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+maintains providers with &gt;</panel_attributes><additional_attributes>70;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1170</x><y>310</y><w>380</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1..*
+logs in with &gt;</panel_attributes><additional_attributes>360;140;260;90;90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>1080</y><w>220</w><h>220</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=0..*
+records &gt;</panel_attributes><additional_attributes>10;190;140;190;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>290</y><w>190</w><h>260</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=1
+updates status through &gt;</panel_attributes><additional_attributes>40;240;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1630</x><y>620</y><w>190</w><h>130</h></coordinates><panel_attributes>ServiceLog
+--
+-fileName: String
+--
++addRecord(record: ServiceRecord): void
++getRecords</panel_attributes><additional_attributes></additional_attributes></element></diagram>
