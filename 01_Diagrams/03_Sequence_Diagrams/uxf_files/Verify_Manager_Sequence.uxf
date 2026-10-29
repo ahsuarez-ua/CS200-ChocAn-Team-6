@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1410</w>
+      <h>860</h>
+    </coordinates>
+    <panel_attributes>title=Verify Manager
+obj=Manager~u ACTOR EXECUTION
+obj=:ManagerTerminal~t
+obj=:VerificationController~c
+obj=:Manager~e
+
+u-&gt;&gt;&gt;t : 1: enterManagerNumber(managerNumber); on=t
+t-&gt;&gt;&gt;c : 1.1: verifyManager(managerNumber); on=c
+c-&gt;&gt;&gt;e : 1.1.1: checkNumber(managerNumber); on=e
+e.&gt;c : 1.1.2: bool; off=e
+c.&gt;t : 1.2: bool; off=c
+combinedFragment=alt~alt1 u e
+t:[valid]
+t-&gt;t + : 1.3: displayMenu()
+t.&gt;u : 1.4: access granted
+..
+t:[invalid]
+t-&gt;t + : 1.3: displayError()
+t.&gt;u : 1.4: access denied
+--
+off=t
+destroy=c</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
