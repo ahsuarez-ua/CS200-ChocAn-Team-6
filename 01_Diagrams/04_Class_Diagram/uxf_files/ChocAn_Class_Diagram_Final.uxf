@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>516</x><y>1044</y><w>162</w><h>150</h></coordinates><panel_attributes>Member
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>516</x><y>1170</y><w>162</w><h>150</h></coordinates><panel_attributes>Member
 --
 - memberName: String
 - memberID: int
@@ -15,7 +15,7 @@
 + suspend():
 + reinstate()
 + updateInfo(name, address, city, state, zip)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>1050</y><w>156</w><h>132</h></coordinates><panel_attributes>Provider
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>1176</y><w>156</w><h>132</h></coordinates><panel_attributes>Provider
 --
 - providerName: String
 - providerID: int
@@ -29,7 +29,7 @@
 + getAddress(): String
 + setName(name: String): void
 + setAddress(street: String, city: String,
-     	state: String, zipCode: String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>348</x><y>846</y><w>102</w><h>90</h></coordinates><panel_attributes>Service
+     	state: String, zipCode: String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>348</x><y>972</y><w>102</w><h>90</h></coordinates><panel_attributes>Service
 --
 -serviceCode: int
 -serviceName: String
@@ -39,13 +39,13 @@
 +getCode(): int
 +getName(): String
 +getFee(): double
-+getServiceDate(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>678</y><w>132</w><h>60</h></coordinates><panel_attributes>ProviderDirectory
++getServiceDate(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>264</x><y>804</y><w>132</w><h>60</h></coordinates><panel_attributes>ProviderDirectory
 --
 - dateCreated: String
 - fileName: String
 --
 + writeToFile(): void
-- formatEntry(service: Service): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>624</x><y>786</y><w>114</w><h>126</h></coordinates><panel_attributes>ServiceRecord
+- formatEntry(service: Service): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>624</x><y>912</y><w>114</w><h>126</h></coordinates><panel_attributes>ServiceRecord
 --
 -currentDateTime: String
 -derviceDate: String
@@ -59,7 +59,7 @@
 +getProviderNumber(): int
 +getMemberNumber(): int
 +getServiceCode(): int
-+save(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1146</x><y>576</y><w>120</w><h>84</h></coordinates><panel_attributes>/Report/
++save(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1146</x><y>702</y><w>120</w><h>84</h></coordinates><panel_attributes>/Report/
 --
 # repotDate: String
 # fileName: String
@@ -70,13 +70,13 @@
 # formatFooter(): String
 /# buildFileName(): String {abstract}/
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>738</y><w>84</w><h>48</h></coordinates><panel_attributes>ReportLIne
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1386</x><y>864</y><w>84</w><h>48</h></coordinates><panel_attributes>ReportLIne
 --
 - text: String
 --
 + ReportLine(text: String
 + toString(): String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1500</x><y>630</y><w>150</w><h>78</h></coordinates><panel_attributes>PaymentRecord
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1500</x><y>756</y><w>150</w><h>78</h></coordinates><panel_attributes>PaymentRecord
 --
 -providerName: String
 -providerNumber: int
@@ -84,16 +84,16 @@
 --
 +PaymentRecord(name: String, 
      	providerNumber: int, amount: double)
-+ format(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>258</y><w>234</w><h>78</h></coordinates><panel_attributes>ProviderController
++ format(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>384</y><w>234</w><h>78</h></coordinates><panel_attributes>ProviderController
 --
 
 --
-+addProvider(name: String, street: String, city: String,
++ addProvider(name: String, street: String, city: String,
      	state: String, zipCode: String):Provider
-+delteProvider(providerNumber): boolean
-+updateProvider(providerNumber: int, name: String, street, String,
++ deleteProvider(providerNumber): boolean
++ updateProvider(providerNumber: int, name: String, street, String,
      	city: String, state: String, zipCode: String): boolean
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>288</y><w>228</w><h>84</h></coordinates><panel_attributes>MemberController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>414</y><w>228</w><h>84</h></coordinates><panel_attributes>MemberController
 --
 
 --
@@ -102,14 +102,14 @@
 + deleteMember(memberNumber: int): boolean
 + updateMember(name:String, street:String,
      	city: String, state: String, zipCode: String): boolean
-+ setStatus(memberNumber: int, status: MemberStatus): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>318</x><y>546</y><w>240</w><h>72</h></coordinates><panel_attributes>ServiceController
++ setStatus(memberNumber: int, status: MemberStatus): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>318</x><y>672</y><w>240</w><h>72</h></coordinates><panel_attributes>ServiceController
 --
 + lookUpService(serviceCode: int): Service
 + recordServiceproviderNumber: int, memberNumber: int,
      	serviceCode: int, serviceDate: String, comments: String):
      	Service Record
 + createProviderDirectory(): ProviderDirectory
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1092</x><y>396</y><w>252</w><h>78</h></coordinates><panel_attributes>ReportController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1092</x><y>522</y><w>252</w><h>78</h></coordinates><panel_attributes>ReportController
 --
 
 --
@@ -117,42 +117,45 @@
      	List&lt;ServiceRecord&gt;: MemberReport
 +createProviderReport(provider:Provider, records:
      	List&lt;ServiceRecord&gt;): ProviderReport
-+createSummaryReport(records: List&lt;ServiceRecord&gt;): SummaryReport</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>930</x><y>144</y><w>138</w><h>120</h></coordinates><panel_attributes>ProviderTerminal
++createSummaryReport(records: List&lt;ServiceRecord&gt;): SummaryReport</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>930</x><y>270</y><w>138</w><h>138</h></coordinates><panel_attributes>ProviderTerminal
 --
--currentProviderID: int
-loggedIn: boolean
+- currentProviderID: int
+- loggedIn: boolean
 --
-+promptProviderID() : int
-+readMemberID(): int
-+displayMessage(msg: String): void
-+promptServiceDate(): String
-+promptServiceCode(): int
-+confirmService(name: string): boolean
-+promptComments(): String
-+displayFee(fee: double): void
-+requestProviderDirectory(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>402</x><y>114</y><w>162</w><h>84</h></coordinates><panel_attributes>OperatorTerminal
++ promptProviderID() : int
++ readMemberID(): int
++ displayMessage(msg: String): void
++ promptServiceDate(): String
++ promptServiceCode(): int
++ confirmService(name: string): boolean
++ promptComments(): String
++ displayFee(fee: double): void
++ requestProviderDirectory(): void
++ billService(): void
++ login(providerNumber: int): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>402</x><y>234</y><w>162</w><h>90</h></coordinates><panel_attributes>OperatorTerminal
 --
 - loggedIn: boolean
 --
 + start(): void
++ login(operatorNumber: int): boolean
 + addMember(): void
 + deleteMember(): void
 + updateMember(): void
 + addProvider(): void
 + deleteProvider():
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1122</x><y>132</y><w>174</w><h>66</h></coordinates><panel_attributes>VerificationController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1122</x><y>258</y><w>174</w><h>66</h></coordinates><panel_attributes>VerificationController
 --
-+verifyManager(managerNumber: int): boolean
-+verifyOperator(operatorNumber: int): boolean
-+verifyProvider(providerNumber: int): boolean
-+ verifyMember(memberNumber: int): boolean
-- isValidNumber(number: int): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1524</x><y>174</y><w>156</w><h>60</h></coordinates><panel_attributes>Scheduler
++ verifyManager(managerNumber: int): boolean
++ verifyOperator(operatorNumber: int): boolean
++ verifyProvider(providerNumber: int): boolean
++ verifyMember(memberNumber: int): ValidationResult
+- isValidNumber(number: int): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1524</x><y>300</y><w>156</w><h>60</h></coordinates><panel_attributes>Scheduler
 --
 -scheduledTime: String
 --
 + triggerMainAccountingProcedure(): void
 + setRunTime(runTime: int): boolean
-+ setRunDay(runDate: String): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1332</x><y>60</y><w>126</w><h>90</h></coordinates><panel_attributes>ManagerTerminal
++ setRunDay(runDate: String): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1332</x><y>186</y><w>138</w><h>90</h></coordinates><panel_attributes>ManagerTerminal
 -
 - currentManagerNumber: int
 - loggedIn: boolean
@@ -161,12 +164,12 @@ loggedIn: boolean
 + login(managerNumber: int): boolean
 + requestMemberReports(): void
 + requestProviderReport(): void
-+ requestSummaryReport(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>36</y><w>156</w><h>54</h></coordinates><panel_attributes>ACMEInterface
++ requestSummaryReport(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>162</y><w>156</w><h>54</h></coordinates><panel_attributes>ACMEInterface
 --
 - updateTime: String
 --
 + updateMemberStatus(memberNumber: int, 
-     status: MemberStatus): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>726</x><y>0</y><w>120</w><h>66</h></coordinates><panel_attributes>Menu
+     status: MemberStatus): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>726</x><y>126</y><w>120</w><h>66</h></coordinates><panel_attributes>Menu
 --
 -running: boolean
 --
@@ -174,7 +177,7 @@ loggedIn: boolean
 +run(): void
 -showMenu(): void
 -openTerminal(choice: int): void
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1332</x><y>228</y><w>138</w><h>84</h></coordinates><panel_attributes>AccountingController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1332</x><y>354</y><w>138</w><h>84</h></coordinates><panel_attributes>AccountingController
 --
 -weekStart: LocalDate
 -weekEnd: LocalDate
@@ -184,32 +187,32 @@ loggedIn: boolean
 +produceProviderReports(): void
 +produceSummaryReport(): void
 +producePaymentData(): EFTFile
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>612</x><y>642</y><w>144</w><h>78</h></coordinates><panel_attributes>ServiceLog
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>612</x><y>768</y><w>144</w><h>78</h></coordinates><panel_attributes>ServiceLog
 --
 -fileName: String
 --
 + addRecord(record: ServiceRecord): void
 + getRecordsBetween(start: String,
      	end: String): List&lt;ServiceRecord&gt;
-- save(record: ServiceRecord): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>840</x><y>30</y><w>558</w><h>42</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+- save(record: ServiceRecord): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>840</x><y>156</y><w>558</w><h>42</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1
-contains &gt;</panel_attributes><additional_attributes>10;20;900;20;900;50</additional_attributes></element><element><id>Relation</id><coordinates><x>804</x><y>60</y><w>216</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+contains &gt;</panel_attributes><additional_attributes>10;20;900;20;900;50</additional_attributes></element><element><id>Relation</id><coordinates><x>804</x><y>186</y><w>216</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1
-contains &gt;</panel_attributes><additional_attributes>10;10;10;80;330;80;330;140</additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>192</y><w>264</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
+contains &gt;</panel_attributes><additional_attributes>10;10;10;80;330;80;330;140</additional_attributes></element><element><id>Relation</id><coordinates><x>528</x><y>318</y><w>264</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-&lt; maintains providers with</panel_attributes><additional_attributes>410;110;410;60;10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>30</y><w>282</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+&lt; maintains providers with</panel_attributes><additional_attributes>410;110;410;60;10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>156</y><w>282</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1
-contains &gt;</panel_attributes><additional_attributes>450;20;10;20;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>192</y><w>252</w><h>108</h></coordinates><panel_attributes>lt=&lt;-
+contains &gt;</panel_attributes><additional_attributes>450;20;10;20;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>318</y><w>252</w><h>108</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-maintains members with &gt;</panel_attributes><additional_attributes>10;160;10;60;390;60;390;10</additional_attributes></element><element><id>Relation</id><coordinates><x>18</x><y>84</y><w>108</w><h>216</h></coordinates><panel_attributes>lt=&lt;-
+maintains members with &gt;</panel_attributes><additional_attributes>10;160;10;60;390;60;390;10</additional_attributes></element><element><id>Relation</id><coordinates><x>18</x><y>210</y><w>108</w><h>216</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-updates status through v</panel_attributes><additional_attributes>10;340;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>12</x><y>444</y><w>174</w><h>84</h></coordinates><panel_attributes>MemberRegistry
+updates status through v</panel_attributes><additional_attributes>10;340;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>12</x><y>570</y><w>174</w><h>84</h></coordinates><panel_attributes>MemberRegistry
 --
 - fileName: String
 - lastNumber: int
@@ -218,108 +221,108 @@ updates status through v</panel_attributes><additional_attributes>10;340;10;10</
 + addMember(member: Member): void
 + removeMember(memberNumber: int): boolean
 + nextMemberNumber(): int
-- save(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>366</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+- save(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>492</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-manages v</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>12</x><y>588</y><w>120</w><h>24</h></coordinates><panel_attributes>lt=.
+manages v</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>12</x><y>714</y><w>120</w><h>24</h></coordinates><panel_attributes>lt=.
 Member
-/alias: full class shown else where/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>48</x><y>522</y><w>48</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+/alias: full class shown else where/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>48</x><y>648</y><w>48</w><h>78</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
-stores v</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>522</y><w>168</w><h>84</h></coordinates><panel_attributes>lt=&lt;-
+stores v</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>162</x><y>648</y><w>168</w><h>84</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-&lt; finds members in</panel_attributes><additional_attributes>10;10;10;110;260;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>480</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=.
+&lt; finds members in</panel_attributes><additional_attributes>10;10;10;110;260;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>606</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=.
 VerificationController
-/alias: full class shown elsewhere/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>342</y><w>132</w><h>48</h></coordinates><panel_attributes>ManagerRegistry
+/alias: full class shown elsewhere/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>468</y><w>132</w><h>48</h></coordinates><panel_attributes>ManagerRegistry
 --
 -fileName: String
 --
 + findManager(managerNumber: int): Manager
-- load(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>252</y><w>72</w><h>60</h></coordinates><panel_attributes>Manager
+- load(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>378</y><w>72</w><h>60</h></coordinates><panel_attributes>Manager
 --
 - name: String
 - number: int
 --
 + getName(): String
-+ getNumber(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>480</y><w>168</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
++ getNumber(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>606</y><w>168</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-&lt; checks members in</panel_attributes><additional_attributes>10;20;260;20</additional_attributes></element><element><id>Relation</id><coordinates><x>318</x><y>270</y><w>96</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+&lt; checks members in</panel_attributes><additional_attributes>10;20;260;20</additional_attributes></element><element><id>Relation</id><coordinates><x>318</x><y>396</y><w>96</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1..*
 r2=managers 
 
-stores ^</panel_attributes><additional_attributes>90;120;90;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>354</x><y>384</y><w>96</w><h>108</h></coordinates><panel_attributes>lt=&lt;-
+stores ^</panel_attributes><additional_attributes>90;120;90;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>354</x><y>510</y><w>96</w><h>108</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=manager
 m2=1
-checks managers in ^</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>606</x><y>450</y><w>168</w><h>72</h></coordinates><panel_attributes>ProviderRegistry
+checks managers in ^</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>606</x><y>576</y><w>168</w><h>72</h></coordinates><panel_attributes>ProviderRegistry
 --
 - fileName: String
 - lastName: int
 --
-+ findProvder(providerNumber: int): Provider
++ findProvider(providerNumber: int): Provider
 + addProvider(provider: Provider): void
 + removeProvider(providerNumber: int) boolean
-- save(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>480</y><w>162</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
+- save(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>606</y><w>162</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-checks providers in &gt;</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>552</x><y>516</y><w>120</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+checks providers in &gt;</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>552</x><y>642</y><w>120</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
 
-finds providers in &gt;</panel_attributes><additional_attributes>170;10;170;90;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>330</y><w>60</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+finds providers in &gt;</panel_attributes><additional_attributes>170;10;170;90;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>456</y><w>60</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=registry
 m2=1
-manages &gt;</panel_attributes><additional_attributes>10;200;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>540</y><w>114</w><h>24</h></coordinates><panel_attributes>lt=.
+manages &gt;</panel_attributes><additional_attributes>10;200;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>666</y><w>114</w><h>24</h></coordinates><panel_attributes>lt=.
 Provider
-/alias: full class shown elsewhere/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>768</x><y>480</y><w>156</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+/alias: full class shown elsewhere/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>768</x><y>606</y><w>156</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=providers
 r2=0..*
 stores &gt;
-</panel_attributes><additional_attributes>10;20;190;20;190;100</additional_attributes></element><element><id>Relation</id><coordinates><x>552</x><y>258</y><w>456</w><h>366</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;20;190;20;190;100</additional_attributes></element><element><id>Relation</id><coordinates><x>552</x><y>402</y><w>456</w><h>348</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=serviceController
 m2=1
-&lt; bills through</panel_attributes><additional_attributes>10;580;730;580;730;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1464</x><y>228</y><w>120</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
+&lt; bills through</panel_attributes><additional_attributes>10;550;730;550;730;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1464</x><y>354</y><w>120</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-&lt; triggers</panel_attributes><additional_attributes>10;80;170;80;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1062</x><y>192</y><w>144</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
+&lt; triggers</panel_attributes><additional_attributes>10;80;170;80;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1062</x><y>318</y><w>144</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=verifier
 m2=1
 
-verifies through &gt;</panel_attributes><additional_attributes>180;10;180;80;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1290</x><y>144</y><w>90</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
+verifies through &gt;</panel_attributes><additional_attributes>180;10;180;80;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1290</x><y>270</y><w>90</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=verifier
 m2=1
 
 logs in through &gt;
-</panel_attributes><additional_attributes>10;70;110;70;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1422</x><y>144</y><w>102</w><h>96</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;70;110;70;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1422</x><y>270</y><w>102</w><h>96</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=accounting
 m2=1
-requests reports from v</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1218</x><y>306</y><w>156</w><h>102</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;150;10;50;240;50;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>468</y><w>48</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+requests reports from v</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1218</x><y>432</y><w>156</w><h>102</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;150;10;50;240;50;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>594</y><w>48</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
 m1=0..*
 r1=reports
 m2=1
-creates v</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1050</x><y>738</y><w>90</w><h>66</h></coordinates><panel_attributes>ProviderReport
+creates v</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1050</x><y>864</y><w>90</w><h>66</h></coordinates><panel_attributes>ProviderReport
 --
 - totalConsultations: int
 totalFee: double
 --
 # formatHeader(): String
 # formatFooter(): String
-# buildFileName(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1164</x><y>738</y><w>90</w><h>60</h></coordinates><panel_attributes>MemberReport
+# buildFileName(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1164</x><y>864</y><w>90</w><h>60</h></coordinates><panel_attributes>MemberReport
 --
 
 --
 # formatHeader(): String
 # formatFooter(): String
-# buildFileName(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1278</x><y>738</y><w>90</w><h>72</h></coordinates><panel_attributes>SummaryReport
+# buildFileName(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1278</x><y>864</y><w>90</w><h>72</h></coordinates><panel_attributes>SummaryReport
 --
 - totalProviders: int
 - totalConsultations: int
@@ -327,106 +330,106 @@ totalFee: double
 --
 # formatHeader(): String
 # formatFooter(): String
-# buildFileName(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>654</y><w>18</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>690</y><w>132</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;200;20;200;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1086</x><y>690</y><w>132</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>200;20;10;20;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>672</x><y>714</y><w>48</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+# buildFileName(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>780</y><w>18</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>816</y><w>132</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;200;20;200;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1086</x><y>816</y><w>132</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>200;20;10;20;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>672</x><y>840</y><w>48</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
 r2=records
 stores ^
-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>906</y><w>66</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>1032</y><w>66</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=member
 m2=0..*
-recerved by v</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>714</x><y>906</y><w>192</w><h>156</h></coordinates><panel_attributes>lt=&lt;-
+recerved by v</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>714</x><y>1032</y><w>192</w><h>156</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=provider
 m2=0..*
-provided by &gt;</panel_attributes><additional_attributes>250;240;250;150;10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>612</y><w>78</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
+provided by &gt;</panel_attributes><additional_attributes>250;240;250;150;10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>738</y><w>78</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
 m1=0..*
 r1=directory
 m2=1
-creates v</panel_attributes><additional_attributes>10;110;10;50;100;50;100;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>690</y><w>138</w><h>48</h></coordinates><panel_attributes>ServiceCatalog
+creates v</panel_attributes><additional_attributes>10;110;10;50;100;50;100;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>816</y><w>138</w><h>48</h></coordinates><panel_attributes>ServiceCatalog
 --
 - fileName: String
 --
 + findService(serviceCode: int); Service
-+ getServicesByName(): List&lt;Services&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>612</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
++ getServicesByName(): List&lt;Services&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>738</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=catalog
 m2=1
-looks up services in v</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>732</y><w>48</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+looks up services in v</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>858</y><w>48</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1..*
 r2=services
-stores v</panel_attributes><additional_attributes>10;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>366</x><y>732</y><w>48</w><h>126</h></coordinates><panel_attributes>lt=&lt;-
+stores v</panel_attributes><additional_attributes>10;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>366</x><y>858</y><w>48</w><h>126</h></coordinates><panel_attributes>lt=&lt;-
 m1=0..*
 r1=directory
 m2=1
-creates &gt;</panel_attributes><additional_attributes>10;190;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>1170</y><w>66</w><h>48</h></coordinates><panel_attributes>&lt;&lt;enumerator&gt;&gt;
+creates &gt;</panel_attributes><additional_attributes>10;190;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>1296</y><w>66</w><h>48</h></coordinates><panel_attributes>&lt;&lt;enumerator&gt;&gt;
 MemberStatus
 --
 VALID
-SUSPENDED</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>126</x><y>1170</y><w>78</w><h>54</h></coordinates><panel_attributes>&lt;&lt;enumerator&gt;&gt;
+SUSPENDED</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>126</x><y>1296</y><w>78</w><h>54</h></coordinates><panel_attributes>&lt;&lt;enumerator&gt;&gt;
 ValidationResult
 --
 VALIDATED
 INVALID_NUMBER
-MEMBER_SUSPENDED</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1500</x><y>474</y><w>114</w><h>78</h></coordinates><panel_attributes>PaymentFile
+MEMBER_SUSPENDED</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1500</x><y>600</y><w>114</w><h>78</h></coordinates><panel_attributes>PaymentFile
 --
 - weekEnding: String
 - fileName: String
 --
 + addRecord(record: PaymentRecord): void
 + getTotal(): double
-+ writeToFile(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1554</x><y>546</y><w>54</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
++ writeToFile(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1554</x><y>672</y><w>54</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1..*
 r2=records
-contains v</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1338</x><y>426</y><w>276</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+contains v</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>1338</x><y>552</y><w>276</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
 m1=0..*
 r1=PaymentFiles
 m2=1
 produces &gt;
-</panel_attributes><additional_attributes>370;80;370;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1260</x><y>606</y><w>192</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>370;80;370;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1260</x><y>732</y><w>192</w><h>144</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
 r2=lines
-contains &gt;</panel_attributes><additional_attributes>10;20;280;20;280;220</additional_attributes></element><element><id>Relation</id><coordinates><x>444</x><y>846</y><w>192</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
+contains &gt;</panel_attributes><additional_attributes>10;20;280;20;280;220</additional_attributes></element><element><id>Relation</id><coordinates><x>444</x><y>972</y><w>192</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=service
 m2=0..*
-&lt; records</panel_attributes><additional_attributes>10;100;90;100;90;20;300;20</additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>438</y><w>354</w><h>264</h></coordinates><panel_attributes>lt=&lt;-
+&lt; records</panel_attributes><additional_attributes>10;100;90;100;90;20;300;20</additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>564</y><w>354</w><h>264</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=logs
 m2=1
-&lt; reads week from</panel_attributes><additional_attributes>10;410;450;410;450;10;570;10</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>798</y><w>186</w><h>342</h></coordinates><panel_attributes>lt=&lt;-
+&lt; reads week from</panel_attributes><additional_attributes>10;410;450;410;450;10;570;10</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>924</y><w>186</w><h>342</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=provider
 m2=0..*
-reports on v</panel_attributes><additional_attributes>10;540;220;540;220;10</additional_attributes></element><element><id>Relation</id><coordinates><x>624</x><y>792</y><w>612</w><h>450</h></coordinates><panel_attributes>lt=&lt;-
+reports on v</panel_attributes><additional_attributes>10;540;220;540;220;10</additional_attributes></element><element><id>Relation</id><coordinates><x>624</x><y>918</y><w>612</w><h>450</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=provider
 m2=0..*
-&lt; reports on</panel_attributes><additional_attributes>10;670;10;730;980;730;980;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>666</x><y>138</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=.
+&lt; reports on</panel_attributes><additional_attributes>10;670;10;730;980;730;980;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>666</x><y>264</y><w>126</w><h>24</h></coordinates><panel_attributes>lt=.
 VerificationController
-/alias: full class shown elsewhere/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>144</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
+/alias: full class shown elsewhere/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>270</y><w>120</w><h>30</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 m2=1
-logs in through &gt;</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>474</x><y>372</y><w>132</w><h>48</h></coordinates><panel_attributes>OperatorRegistry
+logs in through &gt;</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>474</x><y>498</y><w>132</w><h>48</h></coordinates><panel_attributes>OperatorRegistry
 --
 -fileName: String
 --
 + findOperator(OperatorNumber: int): Operator
-- load(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>252</y><w>72</w><h>60</h></coordinates><panel_attributes>Operator
+- load(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>378</y><w>72</w><h>60</h></coordinates><panel_attributes>Operator
 --
 - name: String
 - number: int
 --
 + getName(): String
-+ getNumber(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>414</y><w>156</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
++ getNumber(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>540</y><w>156</w><h>78</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 r1=operator
 m2=1
-checks operators in ^</panel_attributes><additional_attributes>190;10;190;70;10;70;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>492</x><y>276</y><w>84</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+checks operators in ^</panel_attributes><additional_attributes>190;10;190;70;10;70;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>492</x><y>402</y><w>84</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1..*
 r2=operators
