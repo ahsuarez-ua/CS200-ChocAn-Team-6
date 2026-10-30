@@ -1,0 +1,27 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLSequenceAllInOne</id><coordinates><x>0</x><y>0</y><w>1960</w><h>840</h></coordinates><panel_attributes>title=Request Provider Directory
+obj=Provider~p ACTOR EXECUTION
+obj=:ProviderTerminal~t
+obj=:ServiceController~s
+obj=:ServiceCatalog~c
+obj=:ProviderDirectory~d
+
+p-&gt;&gt;&gt;t : 1: requestProviderDirectory(); on=t
+t-&gt;&gt;&gt;s : 1.1: createProviderDirectory(); on=s
+s-&gt;&gt;&gt;c : 1.1.1: getServicesByName(); on=c
+c.&gt;s : 1.1.2: services; off=c
+s-&gt;&gt;&gt;d : 1.1.3: writeToFile(); on=d
+d.&gt;s : 1.1.4: file written; off=d
+s.&gt;t : 1.2: providerDirectory; off=s
+combinedFragment=alt~alt1 p d
+t:[directory created]
+t-&gt;t + : 1.3: displayMessage(msg)
+tick=
+t.&gt;p : 1.4: provider directory
+..
+t:[error]
+t-&gt;t + : 1.3: displayMessage(msg)
+tick=
+t.&gt;p : 1.4: error message
+--
+off=t
+destroy=s</panel_attributes><additional_attributes></additional_attributes></element></diagram>

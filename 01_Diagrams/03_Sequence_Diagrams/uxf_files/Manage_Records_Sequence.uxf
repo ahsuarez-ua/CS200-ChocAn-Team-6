@@ -1,0 +1,45 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLSequenceAllInOne</id><coordinates><x>0</x><y>0</y><w>1650</w><h>1520</h></coordinates><panel_attributes>title=Manage Records
+obj=Operator~o ACTOR EXECUTION
+obj=:OperatorTerminal~t
+obj=:MemberController~mc
+obj=:MemberRegistry~mr
+obj=:ProviderController~pc
+obj=:ProviderRegistry~pr
+
+ref=o t :Verify Operator
+combinedFragment=alt~alt1 o pr
+t:[add member]
+o-&gt;&gt;&gt;t : 1: addMember(); on=t
+t-&gt;&gt;&gt;mc : 1.1: addMember(name, street, city, state, zipCode); on=mc
+mc-&gt;&gt;&gt;mr : 1.1.1: addMember(member); on=mr
+mr.&gt;mc : 1.1.2: saved; off=mr
+mc.&gt;t : 1.2: member; off=mc
+t.&gt;o : 1.3: member number
+..
+t:[delete member]
+o-&gt;&gt;&gt;t : 1: deleteMember()
+t-&gt;&gt;&gt;mc : 1.1: deleteMember(memberNumber); on=mc
+mc-&gt;&gt;&gt;mr : 1.1.1: removeMember(memberNumber); on=mr
+mr.&gt;mc : 1.1.2: boolean; off=mr
+mc.&gt;t : 1.2: boolean; off=mc
+t.&gt;o : 1.3: result
+..
+t:[add provider]
+o-&gt;&gt;&gt;t : 1: addProvider()
+t-&gt;&gt;&gt;pc : 1.1: addProvider(name, street, city, state, zipCode); on=pc
+pc-&gt;&gt;&gt;pr : 1.1.1: addProvider(provider); on=pr
+pr.&gt;pc : 1.1.2: saved; off=pr
+pc.&gt;t : 1.2: provider; off=pc
+t.&gt;o : 1.3: provider number
+..
+t:[delete provider]
+o-&gt;&gt;&gt;t : 1: deleteProvider()
+t-&gt;&gt;&gt;pc : 1.1: deleteProvider(providerNumber); on=pc
+pc-&gt;&gt;&gt;pr : 1.1.1: removeProvider(providerNumber); on=pr
+pr.&gt;pc : 1.1.2: boolean; off=pr
+pc.&gt;t : 1.2: boolean; off=pc
+t.&gt;o : 1.3: result
+--
+off=t
+destroy=mc
+destroy=pc</panel_attributes><additional_attributes></additional_attributes></element></diagram>

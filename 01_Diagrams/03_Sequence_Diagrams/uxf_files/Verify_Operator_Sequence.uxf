@@ -1,36 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
-  <element>
-    <id>UMLSequenceAllInOne</id>
-    <coordinates>
-      <x>0</x>
-      <y>0</y>
-      <w>1400</w>
-      <h>860</h>
-    </coordinates>
-    <panel_attributes>title=Verify Operator
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLSequenceAllInOne</id><coordinates><x>0</x><y>0</y><w>1090</w><h>680</h></coordinates><panel_attributes>title=Verify Operator
 obj=Operator~u ACTOR EXECUTION
 obj=:OperatorTerminal~t
 obj=:VerificationController~c
-obj=:Operator~e
+obj=:OperatorRegistry~r
 
-u-&gt;&gt;&gt;t : 1: enterOperatorNumber(operatorNumber); on=t
+u-&gt;&gt;&gt;t : 1: login(operatorNumber); on=t
 t-&gt;&gt;&gt;c : 1.1: verifyOperator(operatorNumber); on=c
-c-&gt;&gt;&gt;e : 1.1.1: checkNumber(operatorNumber); on=e
-e.&gt;c : 1.1.2: bool; off=e
-c.&gt;t : 1.2: bool; off=c
-combinedFragment=alt~alt1 u e
+c-&gt;&gt;&gt;r : 1.1.1: findOperator(operatorNumber); on=r
+r.&gt;c : 1.1.2: operator; off=r
+c.&gt;t : 1.2: boolean; off=c
+combinedFragment=alt~alt1 u r
 t:[valid]
-t-&gt;t + : 1.3: displayMenu()
-t.&gt;u : 1.4: access granted
+t.&gt;u : 1.3: access granted
 ..
 t:[invalid]
-t-&gt;t + : 1.3: displayError()
-t.&gt;u : 1.4: access denied
+t.&gt;u : 1.3: access denied
 --
 off=t
-destroy=c</panel_attributes>
-    <additional_attributes/>
-  </element>
-</diagram>
+destroy=c</panel_attributes><additional_attributes></additional_attributes></element></diagram>

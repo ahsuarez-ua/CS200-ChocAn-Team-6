@@ -1,49 +1,43 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
-  <element>
-    <id>UMLSequenceAllInOne</id>
-    <coordinates>
-      <x>0</x>
-      <y>0</y>
-      <w>1540</w>
-      <h>1320</h>
-    </coordinates>
-    <panel_attributes>title=Bill For Service
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLSequenceAllInOne</id><coordinates><x>0</x><y>0</y><w>2050</w><h>1330</h></coordinates><panel_attributes>title=Bill For Service
 obj=Provider~p ACTOR EXECUTION
 obj=:ProviderTerminal~t
 obj=:ServiceController~s
-obj=:ProviderDirectory~d
-obj=:ServiceRecord~r
+obj=:ServiceCatalog~c
+obj=:ServiceLog~l
 
-p-&gt;&gt;&gt;t : 1: billService(memberNumber); on=t
-ref=t s :Validate Member Number
-combinedFragment=alt~alt1 p r
+p-&gt;&gt;&gt;t : 1: billService(); on=t
+t-&gt;t + : 1.1: readMemberID()
+tick=
+ref=p t :Validate Member Number
+combinedFragment=alt~alt1 p l
 t:[valid]
-p-&gt;&gt;&gt;t : 2: enterServiceDate(serviceDate)
-p-&gt;&gt;&gt;t : 3: enterServiceCode(serviceCode)
-t-&gt;&gt;&gt;s : 3.1: getServiceName(serviceCode); on=s
-s-&gt;&gt;&gt;d : 3.1.1: findService(serviceCode); on=d
-d.&gt;s : 3.1.2: serviceName; off=d
-s.&gt;t : 3.2: serviceName; off=s
-p-&gt;&gt;&gt;t : 4: confirmService()
+tick=
+t-&gt;t + : 2: promptServiceDate()
+tick=
+t-&gt;t + : 3: promptServiceCode()
+tick=
+t-&gt;&gt;&gt;s : 4: lookUpService(serviceCode); on=s
+s-&gt;&gt;&gt;c : 4.1: findService(serviceCode); on=c
+c.&gt;s : 4.2: service; off=c
+s.&gt;t : 4.3: service; off=s
+t-&gt;t + : 5: confirmService(name)
+tick=
 combinedFragment=opt~opt1 p t
 p:[add comments]
 ref=p t :Enter Service Comments
 --=opt1
-t-&gt;&gt;&gt;s : 5: writeServiceRecord(serviceInfo); on=s
-s-&gt;&gt;&gt;r : 5.1: saveRecord(); on=r
-r.&gt;s : 5.2: bool; off=r
-s-&gt;&gt;&gt;d : 5.3: getFee(serviceCode); on=d
-d.&gt;s : 5.4: fee; off=d
-s.&gt;t : 5.5: fee; off=s
-t.&gt;p : 5.6: fee
+t-&gt;&gt;&gt;s : 6: recordService(providerNumber, memberNumber, serviceCode, serviceDate, comments); on=s
+s-&gt;&gt;&gt;l : 6.1: addRecord(record); on=l
+l.&gt;s : 6.2: recorded; off=l
+s.&gt;t : 6.3: serviceRecord; off=s
+t-&gt;t + : 7: displayFee(fee)
+tick=
+t.&gt;p : 8: fee
 ..
 t:[invalid or suspended]
-t.&gt;p : 2: error message
+t-&gt;t + : 2: displayMessage(msg)
+tick=
+t.&gt;p : 3: error message
 --
 off=t
-destroy=s</panel_attributes>
-    <additional_attributes/>
-  </element>
-</diagram>
+destroy=s</panel_attributes><additional_attributes></additional_attributes></element></diagram>
