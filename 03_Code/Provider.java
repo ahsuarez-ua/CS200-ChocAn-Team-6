@@ -1,38 +1,66 @@
+/**
+ * The Provider Class is the base entity class for all healthcare providers that ChocAn uses. 
+ * Providers bill members through the provider terminal
+ * 
+ * @author Aaron Suarez
+ */
+
 public class Provider {
-    private int number;
-    private String name;
-    private String address;
+    private int providerID;
+    private String providerName;
+    private String streetAddress;
     private String city;
     private String state;
     private int zipCode;
 
     public Provider(int number, String name, String address, String city, String state, int zipCode) {
-        this.number = number;
-        this.name = name;
-        this.address = address;
+        this.providerID = number;
+        this.providerName = name;
+        this.streetAddress = address;
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
     }
 
+    public int getNumber() {
+        return providerID;
+    }
+
     public String getName() {
-        return this.name;
+        return providerName;
+    }
+
+    public String getSteetAddress() {
+        return streetAddress;
+    }
+    
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public int getZipCode() {
+        return zipCode;
+    }
+
+    /** @return the full one-line mailing address */
+    public String getAddress() {
+        return streetAddress + ", " + city + ", " + state + ", " + zipCode;
+    }
+    
+    public void setNumber(int number) {
+        this.providerID = number;
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getNumber() {
-        return this.number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
+        this.providerName = name;
     }
 
     public void setAddress(String street) {
-        this.address = street;
+        this.streetAddress = street;
     }
 
     public void setCity(String city) {
@@ -47,8 +75,9 @@ public class Provider {
         this.zipCode = zip;
     }
 
-    public String getAddress() {
-        return this.address + ", " + this.city + ", " + this.state + ", " + this.zipCode;
+    @Override 
+    public String toString() {
+        return String.format("%09d  %-25s  %s  [%s]", providerID, providerName, getAddress(), zipCode);
     }
  
 }
