@@ -33,7 +33,7 @@ public class Member {
         return memberID;
     }
     
-    public String getStreetAddress() {
+    public String getAddress() {
         return streetAddress;
     }
 
