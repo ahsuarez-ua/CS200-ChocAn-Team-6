@@ -33,7 +33,7 @@ public class Provider {
         return providerName;
     }
 
-    public String getSteetAddress() {
+    public String getAddress() {
         return streetAddress;
     }
     
