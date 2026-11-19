@@ -1,6 +1,9 @@
+package ChocAn.src.chocan;
+
 /**
- * The Provider Class is the base entity class for all healthcare providers that ChocAn uses. 
- * Providers bill members through the provider terminal
+ * A health care provider (dietitian, internist, exercise expert, ...)
+ * who provides services to members and is paid by ChocAn.
+ * Provider numbers are 9 digits.
  * 
  * @author Aaron Suarez
  */
@@ -11,9 +14,9 @@ public class Provider {
     private String streetAddress;
     private String city;
     private String state;
-    private int zipCode;
+    private String zipCode;
 
-    public Provider(int number, String name, String address, String city, String state, int zipCode) {
+    public Provider(int number, String name, String address, String city, String state, String zipCode) {
         this.providerID = number;
         this.providerName = name;
         this.streetAddress = address;
@@ -42,13 +45,8 @@ public class Provider {
         return state;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
-    }
-
-    /** @return the full one-line mailing address */
-    public String getAddress() {
-        return streetAddress + ", " + city + ", " + state + ", " + zipCode;
     }
     
     public void setNumber(int number) {
@@ -71,13 +69,12 @@ public class Provider {
         this.state = state;
     }
 
-    public void setZipCode(int zip) {
+    public void setZipCode(String zip) {
         this.zipCode = zip;
     }
 
     @Override 
     public String toString() {
-        return String.format("%09d  %-25s  %s  [%s]", providerID, providerName, getAddress(), zipCode);
+        return String.format("%09d  %-25s  %-25s  %s, %s %s", providerID, providerName, streetAddress, city, state, zipCode);
     }
- 
 }

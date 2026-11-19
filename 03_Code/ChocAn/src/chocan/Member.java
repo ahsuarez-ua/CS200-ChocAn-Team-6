@@ -1,5 +1,8 @@
+package ChocAn.src.chocan;
+
 /**
- * The member class is the base entity class for each member in that uses ChocAn's services
+ * A ChocAn member who can receive services from providers.
+ * Member numbers are 9 digits.
  * 
  * @author Aaron Suarez
  */
@@ -9,10 +12,10 @@ public class Member {
     private String streetAddress;
     private String city;
     private String state;
-    private int zipCode;
+    private String zipCode;
     private MemberStatus status;
 
-    public Member(int ID, String name, String address, String city, String state, int zipCode, MemberStatus status) {
+    public Member(int ID, String name, String address, String city, String state, String zipCode, MemberStatus status) {
         this.memberID = ID;
         this.memberName = name;
         this.streetAddress = address;
@@ -26,7 +29,7 @@ public class Member {
         return memberName;
     }
 
-    public int getNumber() {
+    public int getID() {
         return memberID;
     }
     
@@ -42,7 +45,7 @@ public class Member {
         return state;
     }
 
-    public int getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
@@ -50,10 +53,7 @@ public class Member {
         return status;
     }
 
-    public String getAddress() {
-        return streetAddress + ", " + city + ", " + state + ", " + zipCode;
-    }
-
+   
     public void suspend() {
         this.status = MemberStatus.SUSPENDED;
     }
@@ -62,13 +62,13 @@ public class Member {
         this.status = MemberStatus.VALID;
     }
 
-    // Replaces all of the member's personal information at once
-    public void updateInfo(String name, String address, String city, String state, int zip) {
-        setName(name);
-        setAddress(address);
-        setCity(city);
-        setState(state);
-        setZipCode(zip);
+    /** Replaces the member's name and full address at once. */
+    public void updateInfo(String name, String address, String city, String state, String zip) {
+        this.memberName = name;
+        this.streetAddress = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zip;
     }
 
     public void setName(String name) {
@@ -91,12 +91,12 @@ public class Member {
         this.state = state;
     }
 
-    public void setZipCode(int zip) {
+    public void setZipCode(String zip) {
         this.zipCode = zip;
     }
 
     @Override 
     public String toString() {
-        return String.format("%09d  %-25s  %s  [%s]", memberID, memberID, getAddress(), status);
+        return String.format("%09d  %-25s  %-25s %s, %s %s  [%s]", memberID, memberName, streetAddress, city, state, zipCode, status);
     }
 }
