@@ -1,4 +1,4 @@
-package ChocAn.src.chocan;
+package chocan;
 
 /**
  * Whether a member may receive services. ACME Accounting Services sets a

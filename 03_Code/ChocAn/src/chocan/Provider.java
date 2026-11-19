@@ -1,4 +1,4 @@
-package ChocAn.src.chocan;
+package chocan;
 
 /**
  * A health care provider (dietitian, internist, exercise expert, ...)

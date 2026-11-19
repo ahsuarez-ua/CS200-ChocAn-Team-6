@@ -1,4 +1,4 @@
-package ChocAn.src.chocan;
+package chocan;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class MemberController {
 
     /** Creates a new valid member with the next member number and returns it. */
     public Member addMember(String name, String street, String city, String state, String zip) {
-        Member member = new Member(memberRegistry.nextMemberNumber(), name, street.toUpperCase(), city, state, zip, MemberStatus.VALID);
+        Member member = new Member(memberRegistry.nextMemberNumber(), name, street, city, state.toUpperCase(), zip, MemberStatus.VALID);
         memberRegistry.addMember(member);
         return member;
     }

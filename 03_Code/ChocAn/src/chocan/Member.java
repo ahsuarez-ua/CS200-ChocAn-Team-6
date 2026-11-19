@@ -1,4 +1,4 @@
-package ChocAn.src.chocan;
+package chocan;
 
 /**
  * A ChocAn member who can receive services from providers.
@@ -60,6 +60,10 @@ public class Member {
 
     public void reinstate() {
         this.status = MemberStatus.VALID;
+    }
+
+    public boolean isSuspended() {
+        return status == MemberStatus.SUSPENDED;
     }
 
     /** Replaces the member's name and full address at once. */

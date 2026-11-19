@@ -1,4 +1,4 @@
-package ChocAn.src.chocan;
+package chocan;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
