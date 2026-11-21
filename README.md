@@ -13,7 +13,6 @@ This is the repository Team 6 will be using for their ChocAn project files
 - 02_Diagrams: Contains the uml diagrams created for each stage of the project in both uxf and pdf form.
 - 03_Code: Contains the source code for the ChocAn Data Processing Software created.
 
-
 ## Authors
 
 - Aaron Suarez - [ahsuarez-ua](https://github.com/ahsuarez-ua)
